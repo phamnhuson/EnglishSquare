@@ -1,0 +1,50 @@
+.welcome {
+    background-image: url("../img/welcome.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.circle-badge {
+    display: inline-block;
+    background: #333;
+    border-radius: 100%;
+    color: #fff;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.ui-header .ui-title {
+    margin-left: 65px!important;
+}
+
+.func-list .circle-badge {
+    margin-right: 10px;
+}
+
+.func-list li {
+    border-bottom: solid 1px #F7F7F7;
+}
+
+.func-list li.ui-last-child {
+    border-bottom: none;
+}
+
+.func-list li a {
+    border-radius: 0!important;
+}
+
+.bg-lightblue {
+    background-color: #03A9F4!important;
+}
+.bg-lightgreen {
+    background-color: #8BC34A!important;
+}
+.bg-amber {
+    background-color: #FFC107!important;
+}
+.bg-deeppurple {
+    background-color: #673AB7!important;
+}

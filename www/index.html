@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <link rel="stylesheet" href="css/waves.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/nativedroid2.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+</head>
+<body>
+
+    <div ng-view></div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+
+    <script type="text/javascript" src="js/waves.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            Waves.attach('.ui-btn');
+            Waves.init();
+            Waves.attach('.ui-btn-raised', '.func-list li');
+
+        });
+
+
+    </script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
