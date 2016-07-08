@@ -20,6 +20,10 @@
 .waves-effect .waves-ripple {
   position: absolute;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
   width: 100px;
   height: 100px;
   margin-top: -50px;
@@ -85,7 +89,7 @@
   color: inherit;
   background-color: rgba(0, 0, 0, 0);
   font-size: 1em;
-  line-height: 1em;
+  /*line-height: 1em;*/
   text-align: center;
   text-decoration: none;
   z-index: 1;
@@ -117,6 +121,10 @@
   height: 2.5em;
   line-height: 2.5em;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: inherit !important;
 }
 .waves-float {
   -webkit-mask-image: none;

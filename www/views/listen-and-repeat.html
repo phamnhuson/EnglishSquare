@@ -1,0 +1,26 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active" ng-swipe-left="loadDictationLevel(level+1);"  ng-swipe-right="loadDictationLevel(level-1);">
+	<div data-role="header" data-position="fixed" class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+		<a onClick="showLeftMenu();" href="javascript:void(0);" class="ui-btn ui-btn-left waves-effect waves-circle" data-role="button" role="button">
+			<i class="zmdi zmdi-menu zmd-fw"></i>
+		</a>
+		<h1 class="ui-title">Listen and repeat</h1>
+		<ul class="nd2Tabs">
+			<li ng-repeat="(index, id) in levels"
+				ng-class="{true: 'nd2Tabs-nav-item nd2Tabs-active', false: 'nd2Tabs-nav-item'}[level==id]"
+				ng-click="loadDictationLevel(id);">Level {{ id }}<span class="high-light"></span></li>
+		</ul>
+	</div>
+
+	<div class="dictations-container">
+		<div class="level-container" ng-class="{show: level==id}" ng-repeat="(index, id) in ::levels" ng-show="level==id">
+			<ul class="ui-listview dictation-list normal-list hide-animate">
+				<li ng-repeat="(key, lession) in ::dictations[id] | limitTo: limit" ng-click="assignDictation(lession);">
+					<a href="javascript:void(0);" class="ui-btn ui-btn-icon-right ui-icon-carat-r waves-effect waves-button">
+						{{ lession.title }}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>

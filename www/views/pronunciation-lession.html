@@ -1,0 +1,22 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active">
+    <div data-role="header" data-position="fixed" class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+        <a href="javascript:void(0);" ng-click="goBack();" class="ui-btn ui-btn-left waves-effect waves-circle" data-role="button" role="button">
+            <i class="zmdi zmdi-arrow-back zmd-fw"></i>
+        </a>
+        <h1 class="ui-title">{{ title }}</h1>
+    </div>
+
+    <div class="pronunciation-video">
+        <iframe id="youtube-player" width="100%" src="{{ trustAsResourceUrl(video) }}" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true" ></iframe>
+    </div>
+
+    <ul class="nd2Tabs pronunciation-sections">
+        <li  ng-repeat="(index, section) in sections" style="width:{{ (100/sections.length) }}%"
+             ng-class="{true: 'nd2Tabs-nav-item section-active', false: 'nd2Tabs-nav-item'}[activeSection==index]"
+             ng-click="loadPronunciationSection(index)">{{ section.title }}<span class="high-light"></span></li>
+    </ul>
+
+    <div class="section-content" ng-bind-html="trustAsHtml(section.content)" ng-repeat="(index, section) in sections" ng-show="activeSection==index">
+    </div>
+
+</div>

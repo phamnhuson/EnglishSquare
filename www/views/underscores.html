@@ -1,0 +1,39 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active bg-gray">
+    <div data-role="header" data-position="fixed"
+         class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+        <a onClick="showLeftMenu();" href="javascript:void(0);" class="ui-btn ui-btn-left waves-effect waves-circle"
+           data-role="button" role="button">
+            <i class="zmdi zmdi-menu zmd-fw"></i>
+        </a>
+        <h1 class="ui-title" style="position: relative;">
+            Underscores
+        </h1>
+        <a href="#ranking/underscores" class="ui-btn ui-btn-right nd2-search-button waves-effect waves-circle">
+            <i class="zmdi zmdi-accounts"></i>
+        </a>
+    </div>
+    <div class="quiz-content">
+        <div class="message mgt-20">
+            <table>
+                <tr>
+                    <td><img src="./img/quiz-intro.gif"></td>
+                    <td>
+                        <span>Hi! I'm Underscores quiz's MC.</span><br>
+                        <span>I will accompany you in this adventure.</span><br>
+                        <span>Are you ready?</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <button ng-click="start()" id="start-quiz" class="ui-btn-raised clr-warning ui-btn waves-effect waves-button mgt-20">Yes, let's start!</button>
+    </div>
+    <div style="display:none;" class="ui-header ui-bar-inherit ui-footer-fixed slidedown quiz-answer">
+        <h1 class="ui-title" style="position: relative;margin-left: 20px!important;">
+            <input type="text" ng-model="keyword" id="answer-input" class="nd2-search-input ui-autocomplete-input" placeholder="Enter your answer word" autocomplete="off">
+            &nbsp;
+        </h1>
+        <a href="javascript:void(0);" ng-click="answer(keyword);" class="ui-btn ui-btn-right wow fadeIn nd2-search-button waves-effect waves-button waves-circle">
+            <i class="zmdi zmdi-mail-send"></i>
+        </a>
+    </div>
+</div>

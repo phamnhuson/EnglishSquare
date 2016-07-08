@@ -1,0 +1,28 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active">
+    <div data-role="header" data-position="fixed" class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+        <a href="javascript:void(0);" ng-click="goBack();" class="ui-btn ui-btn-left waves-effect waves-circle" data-role="button" role="button">
+            <i class="zmdi zmdi-arrow-back zmd-fw"></i>
+        </a>
+        <h1 class="ui-title" style="position: relative;">
+            <span class="header-text">{{ title }}</span>
+            <input type="text" onblur="hideInlineSeach();" ng-model="keyword" id="search-input" class="nd2-search-input ui-autocomplete-input" style="display: none;" placeholder="Find by username" ng-init="keyword=''" autocomplete="off">
+            &nbsp;
+        </h1>
+        <a href="javascript:void(0);" id="inline-search-open" onclick="showInlineSearch();" class="ui-btn ui-btn-right nd2-search-button waves-effect waves-circle">
+            <i class="zmdi zmdi-search"></i>
+        </a>
+        <a href="javascript:void(0);" id="inline-search-close" style="display: none;" onclick="hideInlineSeach();" class="ui-btn ui-btn-right nd2-search-button waves-effect waves-circle">
+            <i class="zmdi zmdi-close"></i>
+        </a>
+    </div>
+
+    <ul class="ui-listview ranking-list normal-list hide-animate">
+        <li ng-repeat="(index, top) in users | filter:keyword | limitTo:limit">
+            <a href="javascript:void(0);" class="ui-btn waves-effect waves-button">
+                <span class="circle-badge" ng-class="top.position <= 10 ? 'bg-lightblue': 'bg-unknowngray'">{{ top.position }}</span>&nbsp; {{ top.user_name?top.user_name:'No Name' }}
+                <span class="score">{{ top.score }}</span>
+            </a>
+        </li>
+    </ul>
+
+</div>

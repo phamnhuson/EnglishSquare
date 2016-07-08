@@ -1,0 +1,46 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active">
+	<div data-role="header" data-position="fixed" class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+		<a href="javascript:void(0);" ng-click="goBack();" class="ui-btn ui-btn-left waves-effect waves-circle" data-role="button" role="button">
+			<i class="zmdi zmdi-arrow-back zmd-fw"></i>
+		</a>
+		<h1 class="ui-title" style="position: relative;">
+			<span class="header-text">{{ lession.title }}</span>
+			<input type="text" onblur="hideInlineSeach();" ng-model="keyword" id="search-input" class="nd2-search-input ui-autocomplete-input" style="display: none;" placeholder="Search in 3000 words" ng-init="keyword=''" autocomplete="off">
+			&nbsp;
+		</h1>
+		<a href="javascript:void(0);" id="inline-search-open" onclick="showInlineSearch();" class="ui-btn ui-btn-right nd2-search-button waves-effect waves-circle">
+			<i class="zmdi zmdi-search"></i>
+		</a>
+		<a href="javascript:void(0);" id="inline-search-close" style="display: none;" onclick="hideInlineSeach();" class="ui-btn ui-btn-right nd2-search-button waves-effect waves-circle">
+			<i class="zmdi zmdi-close"></i>
+		</a>
+		<div class="inline-search-result">
+			<span ng-show="keyword.length > 0" ng-repeat="word in $root.words | filter:keyword | limitTo : 1">{{ word.word }}: {{ word.meaning }}</span>
+			<span ng-show="keyword.length == 0">Enter keyword to show result</span>
+		</div>
+	</div>
+
+	<div class="story-content" ng-bind-html="trustAsHtml(lession.content)"></div>
+
+	<div class="es-player">
+		<div class="controls">
+			<div class="player-time">00:00</div>
+			<div class="player-progress">
+				<div class="player-rail">
+					<div class="player-current-load"><span class="player-seeker"></span></div>
+				</div>
+			</div>
+			<div class="player-button">
+				<div class="player-button-container waves-effect waves-circle">
+					<div class="player-play">
+						<i class="zmdi zmdi-play zmd-1x"></i>
+					</div>
+					<div style="display: none;" class="player-pause">
+						<i class="zmdi zmdi-pause zmd-1x"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

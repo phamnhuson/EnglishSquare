@@ -1,0 +1,17 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active" ng-swipe-left="loadDictationLevel(level+1);"  ng-swipe-right="loadDictationLevel(level-1);">
+    <div data-role="header" data-position="fixed" class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+        <a onClick="showLeftMenu();" href="javascript:void(0);" class="ui-btn ui-btn-left waves-effect waves-circle" data-role="button" role="button">
+            <i class="zmdi zmdi-menu zmd-fw"></i>
+        </a>
+        <h1 class="ui-title">Pronunciation</h1>
+    </div>
+
+    <ul class="ui-listview pronunciation-list normal-list">
+        <li ng-repeat="(key, lession) in lessions" ng-click="assignLession(lession);">
+            <a href="javascript:void(0);" class="ui-btn ui-btn-icon-right ui-icon-carat-r waves-effect waves-button">
+                {{ lession.title }}
+            </a>
+        </li>
+
+    </ul>
+</div>

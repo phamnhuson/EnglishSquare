@@ -1,0 +1,24 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active">
+	<div data-role="header" data-position="fixed" class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+		<a onClick="showLeftMenu();" href="javascript:void(0);" class="ui-btn ui-btn-left waves-effect waves-circle" data-role="button" role="button">
+			<i class="zmdi zmdi-menu zmd-fw"></i>
+		</a>
+		<h1 class="ui-title" style="position: relative;">
+			<input type="text" ng-model="keyword" ng-change="searching();" id="search-input" class="nd2-search-input ui-autocomplete-input" placeholder="Search in 3000 words" autocomplete="off">
+			&nbsp;
+		</h1>
+		<a href="javascript:void(0);" onclick="document.getElementById('search-input').focus();" class="ui-btn ui-btn-right wow fadeIn nd2-search-button waves-effect waves-button waves-circle">
+			<i class="zmdi zmdi-search"></i>
+		</a>
+	</div>
+
+	<ul class="ui-listview word-list normal-list hide-animate">
+		<li ng-repeat="word in words | filter:keyword | limitTo : limit">
+			<a href="javascript:void(0);" class="ui-btn waves-effect waves-button">
+				<span class="word">{{ word.word }}</span><br/><span class="meaning">{{ word.meaning }}</span>
+				<span class="voice waves-effect waves-button" ng-click="speak(word.file);"><i class="zmdi zmd-2x zmdi-volume-up"></i></span>
+			</a>
+		</li>
+	</ul>
+
+</div>

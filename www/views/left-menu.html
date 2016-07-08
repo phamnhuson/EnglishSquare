@@ -1,0 +1,53 @@
+
+<div class="menu-content-wrapper" style="display: none;">
+    <div class='nd2-sidepanel-profile wow fadeInDown' style="margin-bottom: 5px;">
+        <img class='profile-background' src="img/abstract.jpg" />
+        <div class="row">
+            <!--<div class='col-xs-4 center-xs'>-->
+                <!--<div class='box'>-->
+                    <!--<img class="profile-thumbnail" src="img/avatar.jpg" />-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class='col-xs-12' style="position: relative;">
+                <div class='box profile-text' style="padding-left: 20px;">
+                    <strong ng-show="!editing" class="profile-username">{{ user.user_name?user.user_name:'No Name' }}</strong>
+                    <strong ng-show="editing"><input id="edit-user-input" class="nd2-search-input profile-input" style="position: relative;" type="text" ng-model="user.user_name" ng-init="user.user_name"></strong>
+                    <span class='subline profile-score'>Total score: {{ user.score1*1+user.score2*1 }}</span>
+                </div>
+                <div class="profile-edit">
+                    <a href="javascript:void(0);" ng-show="!editing" ng-click="showEdit();" class="waves-effect waves-circle">
+                        <i class="zmdi zmdi-edit zmd-2x zmd-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" ng-show="editing" ng-click="saveInfo();" class="waves-effect waves-circle">
+                        <i class="zmdi zmdi-check zmd-2x zmd-fw"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul data-role="listview" data-icon="false" class="func-list menu-func ui-listview" style="overflow-y: scroll;margin-top: 0;padding-bottom: 50px;">
+        <li>
+            <a href="#listen-and-repeat" class="ui-btn waves-effect waves-button  waves-effect waves-button"><span class="circle-badge bg-lightblue"><i class="zmdi zmdi-headset zmd-fw"></i></span> Listen and repeat</a>
+        </li>
+        <li>
+            <a href="#pronunciation" class="ui-btn waves-effect waves-button waves-effect waves-button"><span class="circle-badge bg-amber"><i class="zmdi zmdi-mic zmd-fw"></i></span> Learn pronunciation</a>
+        </li>
+        <li>
+            <a href="#english-stories" class="ui-btn waves-effect waves-button"><span class="circle-badge bg-lightgreen"><i class="zmdi zmdi-hearing zmd-fw"></i></span> English stories</a>
+        </li>
+        <li>
+            <a href="#words" class="ui-btn waves-effect waves-button"><span class="circle-badge bg-unknownred"><i class="zmdi zmdi-translate zmd-fw"></i></span> 3000 Common words</a>
+        </li>
+        <li>
+            <a href="#word-bricks" class="ui-btn waves-effect waves-button"><span class="circle-badge bg-deeppurple"><i class="zmdi zmdi-view-subtitles zmd-fw"></i></span> Game: Word bricks</a>
+        </li>
+        <li>
+            <a href="#quiz-underscores" class="ui-btn waves-effect waves-button"><span class="circle-badge bg-unknownpink"><i class="zmdi zmdi-incandescent zmd-fw"></i></span> Quiz: Underscores</a>
+        </li>
+        <li>
+            <a href="#about" class="ui-btn waves-effect waves-button"><span class="circle-badge bg-unknownblue"><i class="zmdi zmdi-bookmark zmd-fw"></i></span> About</a>
+        </li>
+        <li>&nbsp;</li>
+    </ul>
+</div>

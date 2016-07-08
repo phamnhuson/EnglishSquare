@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Es Gothic";
+    src: url(../fonts/century-gothic.ttf);
+}
+
 .welcome {
     background-image: url("../img/welcome.png");
     background-size: cover;
@@ -5,19 +10,20 @@
     height: 100%;
     position: absolute;
 }
+
 .circle-badge {
     display: inline-block;
     background: #333;
     border-radius: 100%;
     color: #fff;
-    line-height: 35px;
-    width: 35px;
-    height: 35px;
+    line-height: 36px;
+    width: 36px;
+    height: 36px;
     text-align: center;
 }
 
 .ui-header .ui-title {
-    margin-left: 65px!important;
+    margin-left: 65px !important;
 }
 
 .func-list .circle-badge {
@@ -32,19 +38,662 @@
     border-bottom: none;
 }
 
-.func-list li a {
-    border-radius: 0!important;
+.func-list li a, .normal-list li a {
+    border-radius: 0 !important;
+}
+
+.ui-listview.func-list {
+    margin-top: 1.5em;
+}
+
+.dictations-container {
+    overflow-x: hidden;
+}
+
+.ui-listview.dictation-list {
+    margin-top: 5em;
+    width: 100%;
+}
+
+.ui-listview.pronunciation-list {
+    margin-top: 1.5em;
+    width: 100%;
+}
+
+.pronunciation-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.pronunciation-sections {
+    background: #F5F5F5;
+    border-bottom: solid 2px #03A9F4;
+}
+
+.pronunciation-sections li {
+    color: #333!important;
+    font-weight: bold!important;
+    padding: 0px!important;
+    /*border-right: solid 1px #DEDEDE;*/
+    background: #F5F5F5;
+    position: relative;
+}
+
+.pronunciation-sections li:last-child:before {
+    width: 0;
+}
+
+.pronunciation-sections li:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: #DEDEDE;
+    right: 0;
+}
+
+.pronunciation-sections .section-active:after, .pronunciation-sections .section-active:hover:after {
+
+}
+.pronunciation-sections .high-light {
+    display: none;
+}
+.pronunciation-sections .section-active .high-light {
+    background-color: #03A9F4!important;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 10px;
+    bottom: -4px;
+    -webkit-animation: zoomIn 0.2s;
+    -moz-animation: zoomIn 0.2s;
+    -ms-animation: zoomIn 0.2s;
+    -o-animation: zoomIn 0.2s;
+    animation: zoomIn 0.2s;
+}
+
+.pronunciation-sections.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 900;
+}
+.pronunciation-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.section-content {
+    padding: 10px 20px;
+}
+.section-content .text-heading {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 30px;
+}
+.section-content .text-word {
+    text-align: center;
+    padding: 5px 0;
+    background: #EAEAEA;
+    border-radius: 10px;
+}
+
+.section-content .text-sentence {
+    background: #EAEAEA;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.section-content .text-sentence:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 13px solid #EAEAEA;
+    border-right: 10px solid transparent;
+    position: absolute;
+    bottom: -12px;
+    left: 10px;
 }
 
 .bg-lightblue {
-    background-color: #03A9F4!important;
+    background-color: #03A9F4 !important;
 }
+
 .bg-lightgreen {
-    background-color: #8BC34A!important;
+    background-color: #8BC34A !important;
 }
+
 .bg-amber {
-    background-color: #FFC107!important;
+    background-color: #FFC107 !important;
 }
+
 .bg-deeppurple {
-    background-color: #673AB7!important;
+    background-color: #673AB7 !important;
+}
+.bg-unknownpink {
+    background-color: #E91E63 !important;
+}
+
+.bg-unknownred {
+    background-color: #F44336 !important;
+}
+
+.bg-unknowngray {
+    background-color: #607D8B !important;
+}
+.bg-unknownblue {
+    background-color: #00BCD4 !important;
+}
+
+.bg-gray {
+    background-color: #F5F5F5 !important;
+}
+
+.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page {
+    display: block !important;
+}
+
+.ui-page-header-fixed {
+
+}
+
+.nd2Tabs {
+    margin: 0px !important;
+}
+
+.nd2Tabs .nd2Tabs-active:after {
+    background-color: #E1F918 !important;
+}
+
+.dictation-content {
+    padding: 30px 10px;
+    padding-bottom: 80px;
+    font-family: Es Gothic;
+}
+
+.dictation-content p {
+    font-size: 17px;
+    line-height: 1.4em;
+    text-align: justify;
+    padding: 10px;
+    margin: 0;
+}
+
+.dictation-content p.active {
+    font-weight: bold;
+    background: #D0F0FF;
+}
+
+/* Story CSS */
+.story-content {
+    padding: 30px 20px;
+    padding-bottom: 80px;
+    font-family: Es Gothic;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.es-player {
+    background: rgba(255, 255, 255, 0.97);
+    border-top: solid 1px #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.es-player .controls {
+    padding: 10px;
+    text-align: center;
+}
+
+.player-progress {
+    height: 100%;
+    width: 63%;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: .2em;
+}
+
+.player-button {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.player-button-container {
+    width: auto !important;
+    height: auto !important;
+    overflow: inherit !important;
+}
+
+.player-rail {
+    background: #DEDEDE;
+}
+
+.player-time {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.player-current-load {
+    width: 0%;
+    height: 3px;
+    background: #03A9F4;
+    position: relative;
+    transition: .5s;
+    -webkit-transition: .5s;
+}
+
+.player-seeker {
+    width: 1px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    right: 0;
+    background: #FFF;
+    border: solid 4px #fff;
+    top: -3px;
+    box-shadow: 0px 0px 0px 1px #03A9F4;
+    border-radius: 100%;
+}
+
+.player-play, .player-pause {
+    background: #03A9F4;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff !important;
+}
+
+/* Word Section */
+.word-list {
+    margin-top: 1.5em!important;
+    width: 100%;
+}
+.word-list span.word {
+    font-size: 1.4em;
+    color: #E91E63;
+}
+
+.word-list>li:nth-child(2n-2) {
+    background: #EAF9FF;
+}
+
+span.voice {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #607D8B;
+}
+
+/* Word bricks section */
+.subject {
+    padding: 0 15px;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.subject p {
+    background: #D6EFFB;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.brick-wall {
+    text-align: center;
+    padding: 10px;
+}
+
+a.brick {
+    display: inline-block;
+    background-color: #DE3E0B!important;
+    color: #fff!important;
+    margin: 2px;
+    text-transform: capitalize!important;
+}
+
+.brick.disabled {
+    opacity: 0.4!important;
+}
+
+.broken-result {
+    padding: 10px 20px;
+}
+
+.inline-search-result {
+    width: 100%;
+    position: absolute;
+    min-height: 50px;
+    background: #009CE2;
+    margin-top: -2px;
+    display: none;
+    padding: 0 20px;
+}
+
+.inline-search-result span {
+    vertical-align: middle;
+    min-height: 50px;
+    height: 50px;
+    display: table-cell;
+    padding-right: 40px;
+    font-weight: normal;
+}
+
+.ranking-list{
+    margin-top: 1.5em!important;
+}
+
+.ranking-list .score {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    height: 22px;
+    margin-top: -11px;
+    font-size: 0.8em;
+    background: #F44336;
+    display: block;
+    line-height: 22px;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.ranking-list>li:nth-child(2n-2) {
+    background: #EAF9FF;
+}
+
+.profile-edit {
+    position: absolute;
+    border: none;
+    color: #fff;
+    padding: 0;
+    padding-right: 10px;
+    top: 0;
+    right: 10px;
+}
+
+.profile-edit a {
+    color: #fff;
+}
+
+.profile-username, .profile-input {
+    font-size: 21px!important;
+}
+
+.profile-score {
+    font-size: 15px!important;
+    margin-top: 5px;
+}
+
+#leftpanel {
+    overflow-x: hidden;
+}
+
+#leftpanel.fixed {
+    position: fixed!important;
+}
+
+.no-scroll {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.quiz-content {
+    padding: 10px;
+    padding-bottom: 100px;
+}
+
+.quiz-content .note {
+    text-align: center;
+    padding: 20px;
+}
+
+div.message {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px 1px #E2E2E2;
+    padding: 5px;
+    font-family: Es Gothic;
+}
+
+div.message img {
+    width: 5em;
+    margin-right: 1em;
+    vertical-align: middle;
+}
+
+.quiz-answer {
+    border-top: solid 1px #ddd!important;
+    background-color: #ffffff!important;
+    color: #323232!important;
+}
+
+.quiz-answer i, .quiz-answer input {
+    color: #323232!important;
+}
+
+.quiz-answer input::-webkit-input-placeholder {
+    color: #9e9e9e;
+}
+.quiz-answer input:-moz-placeholder {
+    /* FF 4-18 */
+    color: #9e9e9e;
+}
+.quiz-answer input::-moz-placeholder {
+    /* FF 19+ */
+    color: #9e9e9e;
+}
+.quiz-answer input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #9e9e9e;
+}
+
+.answer {
+    overflow: hidden;
+    padding-bottom: 5px;
+    padding-right: 3px;
+}
+
+.answer .message {
+    display: inline-block;
+    float: right;
+    padding: 15px;
+    background-color: #D1EAFF;
+    position: relative;
+}
+
+.message.wrong::before {
+    content: "Wrong! ";
+    position: absolute;
+    left: -80px;
+    padding: 5px;
+    background: #EA7171;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.message.correct::before {
+    content: "Correct! ";
+    position: absolute;
+    left: -80px;
+    padding: 5px;
+    background: #84B13F;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* ADDITIONAL CLASS */
+.mgt-10 {
+    margin-top: 10px!important;
+}
+.mgt-20 {
+    margin-top: 20px!important;;
+}
+
+.mgt-30 {
+    margin-top: 30px!important;;
+}
+
+/* ANIMATIONS
+============================================================================= */
+
+.level-container.show {
+    animation: slideInRight 0.2s both ease-in;
+    -webkit-animation: slideInRight 0.2s both ease-in;
+    -moz-animation: slideInRight 0.2s both ease-in;
+    -o-animation: slideInRight 0.2s both ease-in;
+    z-index: 8888;
+}
+
+.level-container.ng-hide {
+    animation: slideOutLeft 0.2s both ease-in;
+    -webkit-animation: slideOutLeft 0.2s both ease-in;
+    -moz-animation: slideOutLeft 0.2s both ease-in;
+    -o-animation: slideOutLeft 0.2s both ease-in;
+    z-index: 9999;
+}
+
+/* leaving animations ----------------------------------------- */
+/* rotate and fall */
+@keyframes rotateFall {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+        animation-timing-function: ease-out;
+    }
+    40% {
+        transform: rotateZ(17deg);
+    }
+    60% {
+        transform: rotateZ(16deg);
+    }
+    100% {
+        transform: translateY(100%) rotateZ(17deg);
+    }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to {
+        transform: translateZ(-3000px) rotateZ(360deg);
+        opacity: 0;
+    }
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from {
+        opacity: 0.3;
+        -webkit-transform: scale(0.8);
+    }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.menu-content-wrapper {
+    animation: slideInLeft 0.2s both ease-in;
+    -webkit-animation: slideInLeft 0.2s both ease-in;
+    -moz-animation: slideInLeft 0.2s both ease-in;
+    -o-animation: slideInLeft 0.2s both ease-in;
+}
+
+.left-menu-hide {
+    animation: slideOutLeft 0.2s both ease-in;
+    -webkit-animation: slideOutLeft 0.2s both ease-in;
+    -moz-animation: slideOutLeft 0.2s both ease-in;
+    -o-animation: slideOutLeft 0.2s both ease-in;
+    z-index: 9999;
+    display: none!important;
+    background-color: #fff;
+}
+
+.left-menu-show {
+    animation: slideInLeft 0.2s both ease-in;
+    -webkit-animation: slideInLeft 0.2s both ease-in;
+    -moz-animation: slideInLeft 0.2s both ease-in;
+    -o-animation: slideInLeft 0.2s both ease-in;
+    z-index: 8888;
+    display: block;
+    overflow: hidden;
+}
+
+.page-animate.ng-enter {
+    animation: slideInRight 0.2s both ease-in;
+    -webkit-animation: slideInRight 0.2s both ease-in;
+    -moz-animation: slideInRight 0.2s both ease-in;
+    -o-animation: slideInRight 0.2s both ease-in;
+    z-index: 8888;
+}
+
+.page-animate.ng-leave {
+    animation: slideOutLeft 0.2s both ease-in;
+    -webkit-animation: slideOutLeft 0.2s both ease-in;
+    -moz-animation: slideOutLeft 0.2s both ease-in;
+    -o-animation: slideOutLeft 0.2s both ease-in;
+    z-index: 9999;
+}
+
+.hide-animate.ng-hide-remove {
+    animation: slideInRight 0.2s both ease-in;
+    -webkit-animation: slideInRight 0.2s both ease-in;
+    -moz-animation: slideInRight 0.2s both ease-in;
+    -o-animation: slideInRight 0.2s both ease-in;
+    z-index: 8888;
+}
+.hide-animate.ng-hide-add {
+    animation: slideOutLeft 0.2s both ease-in;
+    -webkit-animation: slideOutLeft 0.2s both ease-in;
+    -moz-animation: slideOutLeft 0.2s both ease-in;
+    -o-animation: slideOutLeft 0.2s both ease-in;
+    z-index: 9999;
+}
+
+.left {
+    text-align: left!important;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.fw {
+	width: 100%;
 }

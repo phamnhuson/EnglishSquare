@@ -1,0 +1,30 @@
+<div class="ui-page ui-page-theme-a ui-page-header-fixed ui-page-active">
+	<div data-role="header" data-position="fixed" class="bg-lightblue ui-header ui-bar-inherit ui-header-fixed slidedown">
+		<a onClick="showLeftMenu();" href="javascript:void(0);" class="ui-btn ui-btn-left waves-effect waves-circle" data-role="button" role="button">
+			<i class="zmdi zmdi-menu zmd-fw"></i>
+		</a>
+		<h1 class="ui-title" style="position: relative;">
+			Word bricks
+		</h1>
+        <a href="#ranking/word-breakers" class="ui-btn ui-btn-right nd2-search-button waves-effect waves-circle">
+            <i class="zmdi zmdi-accounts"></i>
+        </a>
+	</div>
+	<div class="subject">
+		<p ng-show="!finish">Find: {{ currentWord.meaning }}</p>
+		<p ng-show="finish">Your score: {{ user.score1 }}</p>
+	</div>
+	<div ng-show="!finish" class="hide-animate brick-wall">
+		<a ng-repeat="word in bricks" ng-click="breakBrick($event, word.word)" href="javascript:void(0);" class="brick ui-btn waves-effect waves-button">
+			{{ word.word }}
+		</a>
+	</div>
+	<div ng-show="finish" class="broken-result">
+		<p><b>{{ idiom.content }}</b></p>
+		<p>({{ idiom.meaning }})</p>
+		<p><i>{{ idiom.explanation }}</i></p>
+		<br>
+		<button ng-click="buildWall()" class="ui-btn-raised clr-warning ui-btn waves-effect waves-button">Next Wall</button>
+	</div>
+
+</div>

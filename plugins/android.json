@@ -1,0 +1,40 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.phonegap.equiz"
+        }
+    }
+}

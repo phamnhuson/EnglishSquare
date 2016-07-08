@@ -173,6 +173,8 @@ code {
 
 .ui-panel.ui-panel-open {
     position:fixed;
+	background-color: #fff;
+	overflow: hidden;
 }
 
 .ui-panel-position-left > .ui-panel-inner {
@@ -187,7 +189,7 @@ code {
 
 .ui-panel-open {
 	max-width: 90%;
-	width: 304px;
+	width: 80%;
 }
 
 .ui-panel-display-overlay {
@@ -237,7 +239,7 @@ code {
 }
 
 .ui-panel-dismiss.ui-panel-dismiss-open {
-	background-color: rgba(0,0,0,0.1);
+	background-color: rgba(0,0,0,0.5);
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -479,22 +481,41 @@ code {
 	position: relative;
 }
 
-.nd2Tabs .nd2Tabs-active:after {
+/*.nd2Tabs .nd2Tabs-active:after {*/
 
-		content : "";
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		background-color: #323232;
-		bottom: 0px;
-		left: 0px;
+		/*content : "";*/
+		/*position: absolute;*/
+		/*width: 100%;*/
+		/*height: 2px;*/
+		/*background-color: #323232;*/
+		/*bottom: 0px;*/
+		/*left: 0px;*/
 
-		-webkit-animation: zoomIn 0.4s;
-		-moz-animation: zoomIn 0.4s;
-		-ms-animation: zoomIn 0.4s;
-		-o-animation : zoomIn 0.4s;
-		animation : zoomIn 0.4s;
+		/*-webkit-animation: zoomIn 0.4s;*/
+		/*-moz-animation: zoomIn 0.4s;*/
+		/*-ms-animation: zoomIn 0.4s;*/
+		/*-o-animation : zoomIn 0.4s;*/
+		/*animation : zoomIn 0.4s;*/
 
+/*}*/
+
+.nd2Tabs .high-light {
+	display: none;
+}
+
+.nd2Tabs .nd2Tabs-active .high-light {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0px;
+	left: 0px;
+	background-color: #E1F918;
+	-webkit-animation: zoomIn 0.4s;
+	-moz-animation: zoomIn 0.4s;
+	-ms-animation: zoomIn 0.4s;
+	-o-animation : zoomIn 0.4s;
+	animation : zoomIn 0.4s;
 }
 
 .nd2Tabs-content-tab {
@@ -621,16 +642,20 @@ code {
 	height: 1.6em;
 
 	border-radius: 50% !important;
+	-webkit-border-radius: 50% !important;
+	-moz-border-radius: 50% !important;
+	-o-border-radius: 50% !important;
+	-ms-border-radius: 50% !important;
 	overflow: hidden !important;
 
 }
 
-.ui-page-theme-a .ui-btn.ui-btn-raised {
+.ui-btn.ui-btn-raised {
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
 	background-color: rgb(250,250,250);
 }
 
-.ui-page-theme-a .ui-btn.ui-btn-raised.ui-disabled {
+.ui-btn.ui-btn-raised.ui-disabled {
 	box-shadow: none;
 	background-color: rgba(0,0,0,0.24);
 	color: rgba(0,0,0,0.85);
@@ -1105,8 +1130,8 @@ html >body .ui-rangeslider .ui-rangeslider-sliders .ui-slider-track:first-child 
 .nd2-search-input,
 .nd2-search-back-button,
 .nd2-search-active .nd2-search-button {
-	display: none !important;
-	visibility: hidden;
+	/*display: none !important;*/
+	/*visibility: hidden;*/
 }
 
 .nd2-search-active .nd2-search-input,
@@ -1123,12 +1148,13 @@ html >body .ui-rangeslider .ui-rangeslider-sliders .ui-slider-track:first-child 
 .nd2-search-input {
 	display: block;
 	position: absolute;
-	top: 20px;
-	left: 72px;
+	top: 0;
+	left: 0;
+	height: 100%;
 	background-color: transparent;
 	border: 0px;
-	line-height: 25px;
-	font-size: 20px;
+	/*line-height: 1em;*/
+	font-size: 18px;
 	color: #ffffff;
 	outline: none;
 }
